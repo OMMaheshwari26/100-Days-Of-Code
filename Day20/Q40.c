@@ -12,25 +12,26 @@ Sample input: 1111\nSample output: 0000
 
 int main(void)
 {
-
     char binary[1001];
+    int index;
 
     if (scanf("%1000s", binary) != 1)
     {
-
         return 1;
     }
-    for (int i = 0; binary[i] != '\0'; i++)
+
+    for (index = 0; binary[index] != '\0'; index++)
     {
-
-        if (binary[i] != '0' && binary[i] != '1')
+        if (binary[index] != '0' && binary[index] != '1')
         {
-
             puts("Invalid binary number");
-
             return 0;
         }
-        putchar(binary[i] == '0' ? '1': '0');
+    }
+
+    for (index = 0; binary[index] != '\0'; index++)
+    {
+        putchar(binary[index] == '0' ? '1' : '0');
     }
     putchar('\n');
 
